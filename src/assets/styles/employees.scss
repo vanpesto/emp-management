@@ -1,0 +1,78 @@
+.emp-header {
+  position: relative;
+  padding: 100px 100px 70px 270px;
+  display: flex;
+  box-shadow: 0px 3px 6px $shadow-black;
+
+  &-filter {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    border-bottom: 2px solid $dark-gray;
+    padding-right: 10px;
+    &-input {
+      border: none;
+      padding: 10px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.search-icon {
+  cursor: pointer;
+}
+
+.emp-header-btn {
+  position: absolute;
+  left: 120px;
+  top: 100%;
+  transform: translate(50%, -50%);
+}
+
+.add-btn {
+  height: 65px;
+  display: inline-block;
+  font-size: 25px;
+  padding: 20px;
+  background-color: $dark-blue;
+  border-radius: 50%;
+  color: $white;
+  cursor: pointer;
+}
+
+.delete-user-row {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+
+  &-btn {
+    border: none;
+    margin-top: 70px;
+    padding: 10px 30px;
+    border-radius: 20px;
+    background-color: $red;
+    color: $white;
+    font: normal normal 600 16px/21px Segoe UI;
+    cursor: pointer;
+  }
+
+  &-name {
+    margin-left: 30px;
+    font: normal normal 300 16px/21px Segoe UI;
+  }
+  &-status {
+    margin-left: 200px;
+    text-transform: capitalize;
+    font: normal normal bold 16px/21px Segoe UI;
+  }
+}
+
+.user-active {
+  color: $light-blue-modal;
+}
+
+.user-inactive {
+  color: $red;
+}

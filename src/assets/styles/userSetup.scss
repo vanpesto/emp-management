@@ -1,0 +1,204 @@
+.user-setup {
+  &-permissions {
+    width: 100%;
+    &-title {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      span {
+        text-transform: capitalize;
+        font: normal normal 300 16px/21px Segoe UI;
+      }
+    }
+  }
+
+  &-column {
+    height: 550px;
+  }
+
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(100% / 3), 1fr));
+    padding: 60px 75px 245px 190px;
+    background-color: $gray-bg;
+    justify-items: start;
+  }
+
+  &-profile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-photo {
+      width: 230px;
+
+      &-container {
+        position: relative;
+      }
+
+      &-text {
+        margin-top: 14px;
+        margin-bottom: 30px;
+        font: normal normal 300 14px/19px Segoe UI;
+        color: $gray-icons;
+      }
+    }
+    &-name {
+      font: normal normal 600 48px/48px Segoe UI;
+    }
+
+    &-email {
+      font: normal normal 300 16px/21px Segoe UI;
+      margin-top: 13px;
+    }
+
+    &-btn {
+      margin-top: auto;
+      background-color: $light-blue;
+    }
+  }
+
+  &-icon {
+    padding: 13px;
+    background-color: $gray-icons;
+    border-radius: 50%;
+
+    svg {
+      font-size: 45px;
+      color: $white;
+    }
+  }
+
+  &-details {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+
+    &-btn {
+      margin-top: auto;
+      background-color: $light-blue-modal;
+    }
+
+    &-select {
+      background-color: transparent;
+    }
+
+    &-form-row {
+      display: block;
+      margin-top: 50px;
+    }
+    &-input {
+      background-color: transparent;
+      width: 100%;
+
+      &-container {
+        width: 100%;
+      }
+    }
+
+    &-status {
+      display: flex;
+      align-items: center;
+      margin-top: 55px;
+      margin-bottom: 50px;
+      &-text {
+        margin-left: 12px;
+        font: normal normal 300 16px/21px Segoe UI;
+        span {
+          font: normal normal 600 16px/21px Segoe UI;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}
+
+.user-photo-key {
+  position: absolute;
+  bottom: 20px;
+  left: 65%;
+  font-size: 30px;
+  padding: 0px 25px;
+}
+
+.user-setup-group-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-setup-permissions {
+  display: flex;
+  flex-direction: column;
+
+  &-super-admin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 55px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $gray-icons;
+    span {
+      font: normal normal bold 16px/21px Segoe UI;
+    }
+  }
+}
+
+.permission-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+
+  &-btn {
+    display: flex;
+    align-items: center;
+
+    svg {
+      font-size: 22px;
+      margin-right: 5px;
+    }
+  }
+  &-name {
+    font: normal normal 600 16px/21px Segoe UI;
+  }
+
+  &-container {
+    border-bottom: 1px solid $gray-icons;
+    padding-bottom: 20px;
+  }
+}
+
+.user-setup-single-permission {
+  display: flex;
+  justify-content: space-between;
+  transition: all 1s;
+  margin-bottom: 10px;
+
+  &-name {
+    text-transform: capitalize;
+    font: normal normal 600 16px/21px Segoe UI;
+  }
+  &-box {
+    display: flex;
+    align-items: center;
+
+    svg {
+      font-size: 20px;
+    }
+  }
+}
+
+.group-open {
+  padding-bottom: 20px;
+}
+
+.dot-active {
+  color: $red;
+}
+
+.dot-inactive {
+  color: $light-blue;
+}

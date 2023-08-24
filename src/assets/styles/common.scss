@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.dropdown-arrow {
+  font-size: 22px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.admin-key {
+  padding: 3px 12px;
+  background-color: $light-blue;
+  color: $white;
+  border-radius: 20px;
+  font-size: 24px;
+}
+
+.user-setup-btn {
+  border-radius: 40px;
+  color: $white;
+  width: 200px;
+  height: 60px;
+  font: normal normal 600 16px/21px Segoe UI;
+}
+
+.btn-disabled {
+  background-color: $gray-icons !important;
+}
+
+.disabled {
+  color: $gray-icons !important;
+}
