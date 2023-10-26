@@ -51,8 +51,8 @@ function UserSetupDetails({ employee }) {
           offColor="#f89797"
           onHandleColor="#44a0d3"
           offHandleColor="#ff0000"
-          checkedIcon=""
-          uncheckedIcon=""
+          checkedIcon={false}
+          uncheckedIcon={false}
           height={13}
           width={40}
           handleDiameter={22}
@@ -71,6 +71,11 @@ function UserSetupDetails({ employee }) {
             employee.status === "inactive" && "disabled"
           }`}
         ></p>
+        {error && (
+          <p className={`invite-modal-form-validation-msg msg-error`}>
+            {error}
+          </p>
+        )}
         <div className="invite-modal-form-row user-setup-details-form-row">
           <div className="input-container user-details-input-container">
             <input

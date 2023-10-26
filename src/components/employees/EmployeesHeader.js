@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { IoMdSettings } from "react-icons/io";
 import { useLocation } from "react-router";
-import AddButton from "./AddButton";
-import CustomModal from "./CustomModal";
+import AddButton from "../common/AddButton";
+import CustomModal from "../modals/CustomModal";
 import InviteUserForm from "./InviteUserForm";
 
-function EmployeesHeader({ additional, title, type }) {
+/**
+ *
+ * @param {component} additional represents additional block of jsx or a dynamicly set component
+ */
+function EmployeesHeader({ additional, title }) {
   const [inviteModalVisible, setInviteModalVisible] = useState(false);
   const location = useLocation();
   const renderIcon = () => {

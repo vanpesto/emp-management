@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { MdFace, MdAlternateEmail, MdVpnKey } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../redux-toolkit/reducers/employeeReducer";
-import { generateUniqueId, validateName } from "../utils/commonUtils";
+import { addUser } from "../../redux-toolkit/reducers/employeeReducer";
+import { generateUniqueId, validateName } from "../../utils/commonUtils";
 
 function InviteUserForm({ setInviteModalVisible }) {
   const [firstName, setFirstName] = useState("");

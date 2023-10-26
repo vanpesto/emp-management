@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import AddButton from "../components/AddButton";
-import EmployeeFilter from "../components/EmployeeFilter";
-import EmployeesHeader from "../components/EmployeesHeader";
-import EmployeesTable from "../components/EmployeesTable";
+import { useSelector } from "react-redux";
+import EmployeeFilter from "../components/employees/EmployeeFilter";
+import EmployeesHeader from "../components/employees/EmployeesHeader";
+import EmployeesTable from "../components/employees/EmployeesTable";
 
 function Employees() {
   const data = useSelector((state) => state.employee.data);

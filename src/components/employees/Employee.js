@@ -3,12 +3,12 @@ import { FaTrash } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
 import { MdFace, MdVpnKey } from "react-icons/md";
 import Switch from "react-switch";
-import Avatar from "../assets/images/Avatar.svg";
-import CustomModal from "./CustomModal";
+import Avatar from "../../assets/images/Avatar.svg";
+import CustomModal from "../modals/CustomModal";
 import {
   changeStatus,
   deleteUser,
-} from "../redux-toolkit/reducers/employeeReducer";
+} from "../../redux-toolkit/reducers/employeeReducer";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -88,8 +88,8 @@ function Employee({ employee }) {
           offColor="#f89797"
           onHandleColor="#44a0d3"
           offHandleColor="#ff0000"
-          checkedIcon=""
-          uncheckedIcon=""
+          checkedIcon={false}
+          uncheckedIcon={false}
           height={13}
           width={40}
           handleDiameter={22}

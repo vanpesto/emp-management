@@ -6,7 +6,7 @@ import {
   sortByName,
   sortByRole,
   sortByStatus,
-} from "../redux-toolkit/reducers/employeeReducer";
+} from "../../redux-toolkit/reducers/employeeReducer";
 import ReactPaginate from "react-paginate";
 
 function EmployeesTable({ data }) {
@@ -38,7 +38,6 @@ function EmployeesTable({ data }) {
 
   return (
     <div className="emp-table">
-      {console.log(data)}
       <div className="emp-table-header">
         <div className="emp-table-header-columns user-column">
           <span>User</span>

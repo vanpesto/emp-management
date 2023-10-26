@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { PayloadAction } from "@reduxjs/toolkit";
 import empData from "../../employees.json";
 
 const initialState = {
@@ -8,66 +7,47 @@ const initialState = {
 };
 
 export const employeeSlice = createSlice({
+  // Redux Toolkit allows us to write "mutating" logic in reducers. It
+  // doesn't actually mutate the state because it uses the Immer library,
+  // which detects changes to a "draft state" and produces a brand new
+  // immutable state based off those changes
   name: "employee",
   initialState,
   reducers: {
     changeSuperAdminState: (state, action) => {
-      state.data.forEach((employee) => {
-        if (employee.id === action.payload.id) {
-          if (action.payload.superAdmin === "active") {
-            employee.superAdmin = "inactive";
-          } else {
-            employee.superAdmin = "active";
-          }
-        }
-      });
+      const { id, superAdmin } = action.payload;
+      // finding the employee
+      const employee = state.data.find((employee) => employee.id === id);
+      employee.superAdmin = superAdmin === "active" ? "inactive" : "active";
     },
     changePermissionGroupStatus: (state, action) => {
-      state.data.forEach((employee) => {
-        if (employee.id === action.payload.id) {
-          employee.permissionGroups.forEach((group) => {
-            if (group.name === action.payload.groupName) {
-              if (group.state === "active") {
-                group.state = "inactive";
-              } else {
-                group.state = "active";
-              }
-            }
-          });
+      const { id, groupName } = action.payload;
+      // finding the employee
+      const employee = state.data.find((employee) => employee.id === id);
+      if (employee) {
+        // finding the current employee group
+        const group = employee?.permissionGroups.find(
+          (group) => group.name === groupName
+        );
+        if (group) {
+          group.state = group.state === "active" ? "inactive" : "active";
         }
-      });
-    },
-    changePermissionStatus: (state, action) => {
-      state.data.forEach((employee) => {
-        if (employee.id === action.payload.id) {
-          employee.permissionGroups.forEach((group) => {
-            if (group.name === action.payload.groupName) {
-              group.permissions.forEach((permission) => {
-                if (permission.name === action.payload.permission.name) {
-                  if (action.payload.permission.state === "active") {
-                    permission.state = "inactive";
-                  } else {
-                    permission.state = "active";
-                  }
-                }
-              });
-            }
-          });
-        }
-      });
+      }
     },
     editEmployee: (state, action) => {
       state.data.forEach((employee) => {
         if (employee.id === action.payload.id) {
-          employee.firstName = action.payload.firstName;
-          employee.lastName = action.payload.lastName;
-          employee.role = action.payload.role;
+          employee = action.payload;
           return;
         }
       });
     },
     changeStatus: (state, action) => {
-      console.log(action.payload);
+      const { id, status } = action.payload;
+      const employee = state.data.find((employee) => employee.id === id);
+      if (employee) {
+        employee.status = status;
+      }
       state.data.forEach((employee) => {
         if (employee.id === action.payload.id) {
           employee.status = action.payload.status;
@@ -80,6 +60,26 @@ export const employeeSlice = createSlice({
     },
     addUser: (state, action) => {
       state.data.push(action.payload);
+    },
+    changePermissionStatus: (state, action) => {
+      const { id, groupName, permission } = action.payload;
+      // finding the employee
+      const employee = state.data.find((employee) => employee.id === id);
+      if (employee) {
+        // finding the current employee group
+        const group = employee?.permissionGroups.find(
+          (group) => group.name === groupName
+        );
+        if (group) {
+          // finding the current permission to change
+          const perm = group.permissions.find(
+            (per) => per.name === permission.name
+          );
+          if (perm) {
+            perm.state = perm.state === "active" ? "inactive" : "active";
+          }
+        }
+      }
     },
     deleteUser: (state, action) => {
       const filteredData = state.data.filter(

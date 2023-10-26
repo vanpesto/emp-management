@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router";
-import EmployeesHeader from "../components/EmployeesHeader";
+import EmployeesHeader from "../components/employees/EmployeesHeader";
 import UserSetupProfile from "../components/userSetup/UserSetupProfile";
 import UserSetupDetails from "../components/userSetup/UserSetupDetails";
 import { useSelector } from "react-redux";
@@ -16,11 +16,7 @@ function UserSetup() {
 
   useEffect(() => {
     if (data) {
-      data.forEach((emp) => {
-        if (emp.id === employee.id) {
-          setEmployee(emp);
-        }
-      });
+      setEmployee(data.find((emp) => emp.id === employee.id));
     }
   }, [data]);
 

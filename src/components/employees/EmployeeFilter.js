@@ -6,6 +6,10 @@ function EmployeeFilter({ data, setCurrentData }) {
   const [filterValue, setFilterValue] = useState("");
   const [debounceValue] = useDebounce(filterValue, 500);
 
+  /**
+   * filter the data by name
+   * @param {string} value the input value
+   */
   const filterData = (value) => {
     if (value === "") {
       setCurrentData(data);
@@ -20,9 +24,11 @@ function EmployeeFilter({ data, setCurrentData }) {
     });
     setCurrentData([...filteredData]);
   };
+
   useEffect(() => {
     filterData(debounceValue);
   }, [debounceValue]);
+
   return (
     <div className="emp-header-filter">
       <input

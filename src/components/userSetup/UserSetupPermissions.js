@@ -28,8 +28,8 @@ function UserSetupPermissions({ employee }) {
           offColor="#f89797"
           onHandleColor="#44a0d3"
           offHandleColor="#ff0000"
-          checkedIcon=""
-          uncheckedIcon=""
+          checkedIcon={false}
+          uncheckedIcon={false}
           height={13}
           width={40}
           handleDiameter={22}
